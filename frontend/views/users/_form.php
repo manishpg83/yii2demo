@@ -22,8 +22,7 @@ use kartik\file\FileInput;
     <?= $form->field($model, 'firstname')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'lastname')->textInput(['maxlength' => true]) ?>
-    <?php //echo $form->dropDownList($model,'item_type_id', CHtml::GallerTypey(GallerTypey::model()->findAll(), 'id', 'gallery_type_name'), array('empty'=>'select Gallery Type')); ?>
-
+   
     <?php $gallery_type_name = ArrayHelper::map(\common\models\GalleryType::find()->orderBy('gallery_type_name')->all(), 'id', 'gallery_type_name') ?>
 	<?= $form->field($model, 'gallery_type_id')->dropDownList($gallery_type_name, ['prompt' => '---- Select Gallery Type ----'])->label('Gallery type') ?>
 
