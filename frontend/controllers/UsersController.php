@@ -234,11 +234,6 @@ class UsersController extends Controller
      */
     public function actionDelete($id)
     {
-        //Image::findModel()
-        //$gallery = Gallery::findOne($id);
-
-        //$gallery_
-        //Customer::deleteAll(['status' => Customer::STATUS_INACTIVE]);
 
         Users::deleteRelated($id);
         $this->findModel($id)->delete();
